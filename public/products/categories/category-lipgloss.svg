@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <linearGradient id="bg-cg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff5f8"/>
+      <stop offset="100%" stop-color="#fde8f2"/>
+    </linearGradient>
+    <linearGradient id="t1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f9c8d8"/>
+      <stop offset="50%" stop-color="#fde8f2"/>
+      <stop offset="100%" stop-color="#f0a8c0"/>
+    </linearGradient>
+    <linearGradient id="t2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f9d4b0"/>
+      <stop offset="50%" stop-color="#fdf0e0"/>
+      <stop offset="100%" stop-color="#f0c090"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" fill="url(#bg-cg2)"/>
+  <!-- sparkles -->
+  <path d="M44 80 L46 73 L48 80 L55 82 L48 84 L46 91 L44 84 L37 82Z" fill="#f9c8d8" opacity="0.5"/>
+  <path d="M254 210 L256 203 L258 210 L265 212 L258 214 L256 221 L254 214 L247 212Z" fill="#f9c8d8" opacity="0.4"/>
+  <circle cx="55" cy="220" r="5" fill="#e8b4c4" opacity="0.4"/>
+  <circle cx="246" cy="82" r="5" fill="#e8b4c4" opacity="0.4"/>
+  <!-- tube 1 (main, center-left) -->
+  <rect x="105" y="80" width="44" height="190" rx="7" fill="url(#t1)"/>
+  <rect x="108" y="83" width="12" height="183" rx="4" fill="white" opacity="0.3"/>
+  <rect x="105" y="80" width="44" height="190" rx="7" fill="none" stroke="#e8b4c4" stroke-width="1.5"/>
+  <!-- tube1 cap -->
+  <rect x="100" y="48" width="54" height="36" rx="7" fill="#e8a5b8"/>
+  <ellipse cx="127" cy="48" rx="29" ry="18" fill="#f2c4d4"/>
+  <ellipse cx="116" cy="40" rx="10" ry="6" fill="white" opacity="0.28" transform="rotate(-15 116 40)"/>
+  <rect x="102" y="78" width="50" height="8" rx="4" fill="#c9899a"/>
+  <!-- tube1 base -->
+  <rect x="102" y="268" width="50" height="16" rx="8" fill="#c9899a"/>
+  <!-- wand1 -->
+  <rect x="124" y="22" width="6" height="30" rx="3" fill="#d4a0b0"/>
+  <ellipse cx="127" cy="22" rx="8" ry="5" fill="#e8b4c4"/>
+  <!-- tube 2 (right, smaller/behind) -->
+  <rect x="164" y="100" width="36" height="160" rx="6" fill="url(#t2)"/>
+  <rect x="167" y="103" width="10" height="153" rx="3" fill="white" opacity="0.28"/>
+  <rect x="164" y="100" width="36" height="160" rx="6" fill="none" stroke="#e8c4a0" stroke-width="1.2"/>
+  <rect x="160" y="70" width="44" height="34" rx="6" fill="#e8b890"/>
+  <ellipse cx="182" cy="70" rx="24" ry="15" fill="#f2d4b8"/>
+  <rect x="162" y="98" width="40" height="7" rx="3.5" fill="#c8a070"/>
+  <rect x="162" y="258" width="40" height="14" rx="7" fill="#c8a070"/>
+  <rect x="179" y="44" width="5" height="28" rx="2.5" fill="#d4b090"/>
+  <ellipse cx="181" cy="44" rx="7" ry="4" fill="#e8c4a8"/>
+  <!-- bows -->
+  <path d="M113 50 C104 40 92 44 100 50 C103 53 111 52 113 50Z" fill="#B76E79"/>
+  <path d="M141 50 C150 40 162 44 154 50 C151 53 143 52 141 50Z" fill="#B76E79"/>
+  <circle cx="127" cy="51" r="5" fill="#a05a6a"/>
+  <circle cx="127" cy="51" r="2" fill="#d4889e"/>
+</svg>

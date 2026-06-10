@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <radialGradient id="pw-cb" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#f9c8d8"/>
+      <stop offset="100%" stop-color="#d4889e"/>
+    </radialGradient>
+    <linearGradient id="bg-cb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff0f5"/>
+      <stop offset="100%" stop-color="#fde0ef"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" fill="url(#bg-cb)"/>
+  <!-- petal decorations -->
+  <ellipse cx="42" cy="58" rx="14" ry="8" fill="#f9c8d8" opacity="0.5" transform="rotate(-30 42 58)"/>
+  <ellipse cx="56" cy="46" rx="14" ry="8" fill="#f9c8d8" opacity="0.5" transform="rotate(20 56 46)"/>
+  <ellipse cx="260" cy="240" rx="14" ry="8" fill="#f9c8d8" opacity="0.4" transform="rotate(45 260 240)"/>
+  <ellipse cx="246" cy="254" rx="14" ry="8" fill="#f9c8d8" opacity="0.4" transform="rotate(-15 246 254)"/>
+  <circle cx="50" cy="50" r="5" fill="#e8a5b8" opacity="0.6"/>
+  <circle cx="252" cy="248" r="5" fill="#e8a5b8" opacity="0.5"/>
+  <!-- small sparkles -->
+  <path d="M240 55 L242 48 L244 55 L251 57 L244 59 L242 66 L240 59 L233 57Z" fill="#f9c8d8" opacity="0.5"/>
+  <path d="M55 245 L57 238 L59 245 L66 247 L59 249 L57 256 L55 249 L48 247Z" fill="#f9c8d8" opacity="0.4"/>
+  <!-- shadow -->
+  <ellipse cx="150" cy="280" rx="68" ry="8" fill="#d4a0b0" opacity="0.25"/>
+  <!-- base -->
+  <rect x="54" y="196" width="192" height="62" rx="22" fill="#c9899a"/>
+  <rect x="60" y="196" width="180" height="11" rx="6" fill="#d9a8b8" opacity="0.7"/>
+  <rect x="62" y="210" width="176" height="4" rx="2" fill="#f0c8d8" opacity="0.7"/>
+  <rect x="62" y="217" width="176" height="4" rx="2" fill="#c090a6" opacity="0.5"/>
+  <rect x="62" y="224" width="176" height="4" rx="2" fill="#f0c8d8" opacity="0.7"/>
+  <rect x="62" y="231" width="176" height="4" rx="2" fill="#c090a6" opacity="0.5"/>
+  <rect x="44" y="188" width="212" height="12" rx="6" fill="#c8906a"/>
+  <!-- lid -->
+  <rect x="50" y="74" width="200" height="118" rx="24" fill="#f0c0d0"/>
+  <rect x="64" y="88" width="172" height="92" rx="16" fill="#fde8f2"/>
+  <rect x="76" y="96" width="148" height="76" rx="12" fill="url(#pw-cb)"/>
+  <ellipse cx="118" cy="114" rx="30" ry="13" fill="white" opacity="0.22" transform="rotate(-18 118 114)"/>
+  <text x="150" y="143" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="22" fill="#8B4A58" opacity="0.4">E</text>
+  <!-- bow -->
+  <path d="M132 72 C114 54 94 62 108 72 C114 78 128 76 132 72Z" fill="#B76E79"/>
+  <path d="M168 72 C186 54 206 62 192 72 C186 78 172 76 168 72Z" fill="#B76E79"/>
+  <circle cx="150" cy="73" r="8" fill="#a05a6a"/>
+  <circle cx="150" cy="73" r="3.5" fill="#d4889e"/>
+  <path d="M142 76 Q136 88 130 98" stroke="#B76E79" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M158 76 Q164 88 170 98" stroke="#B76E79" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+</svg>

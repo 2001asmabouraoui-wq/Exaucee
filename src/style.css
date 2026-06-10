@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Great+Vibes&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+:root {
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #3D2B1F;
+  background-color: #FFF9F4;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ── Arabic font ── */
+.font-cairo, [dir="rtl"] {
+  font-family: 'Cairo', 'Manrope', sans-serif;
+}
+
+[dir="rtl"] * {
+  letter-spacing: 0 !important;
+}
+
+/* ── Vue transitions ── */
+.v-enter-active { transition: opacity 0.3s ease; }
+.v-leave-active { transition: opacity 0.2s ease; }
+.v-enter-from, .v-leave-to { opacity: 0; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 0.3rem; }
+::-webkit-scrollbar-track { background: #FDF6EE; }
+::-webkit-scrollbar-thumb { background: #C4828A; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #8FA89C; }
+
+/* ── Announcement bar marquee ── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Falling glitter ── */
+@keyframes glitter-fall {
+  0%   { transform: translateY(-20px) rotate(0deg)   scale(0.5); opacity: 0;   }
+  8%   { opacity: 1; }
+  40%  { transform: translateY(40vh)  rotate(160deg) scale(1.1); opacity: 0.9; }
+  70%  { transform: translateY(70vh)  rotate(320deg) scale(0.9); opacity: 0.7; }
+  90%  { opacity: 0.3; }
+  100% { transform: translateY(108vh) rotate(500deg) scale(0.5); opacity: 0;   }
+}
+
+@keyframes glitter-drift {
+  0%   { transform: translateY(-20px) rotate(0deg)    translateX(0px)   scale(0.5); opacity: 0;   }
+  8%   { opacity: 1; }
+  30%  { transform: translateY(30vh)  rotate(-110deg) translateX(18px)  scale(1.1); opacity: 0.9; }
+  60%  { transform: translateY(60vh)  rotate(220deg)  translateX(-12px) scale(0.9); opacity: 0.7; }
+  90%  { opacity: 0.3; }
+  100% { transform: translateY(108vh) rotate(-420deg) translateX(10px)  scale(0.5); opacity: 0;   }
+}
+
+.glitter {
+  position: fixed;
+  top: 0;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  animation: glitter-fall linear infinite;
+}
+
+/* ── Product float bob ── */
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0px)   rotate(0deg);   }
+  35%       { transform: translateY(-11px) rotate(0.6deg); }
+  65%       { transform: translateY(-6px)  rotate(-0.4deg);}
+}
+
+.product-float {
+  animation: float-bob 3.8s ease-in-out infinite;
+}
+
+/* ── Great Vibes utility ── */
+.font-great-vibes {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
