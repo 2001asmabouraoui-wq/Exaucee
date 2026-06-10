@@ -24,3 +24,4 @@ public/raw-images
 *.sln
 *.sw?
 server/.env
+.env
