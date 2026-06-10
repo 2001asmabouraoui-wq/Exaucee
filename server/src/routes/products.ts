@@ -150,7 +150,7 @@ router.patch('/:id', adminAuth, async (req, res) => {
   if (updates.price       != null) updates.price       = Number(updates.price)
   if (updates.final_price != null) updates.final_price = Number(updates.final_price)
 
-  const { data, error } = await tryUpdate(id, updates)
+  const { data, error } = await tryUpdate(String(id), updates)
   if (error) {
     res.status(500).json({ error: error.message || 'Failed to update product' })
     return
