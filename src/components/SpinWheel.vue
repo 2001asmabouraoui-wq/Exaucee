@@ -346,7 +346,7 @@ if (!localStorage.getItem('exaucee_spun')) {
 <style>
 /* ── Trigger ── */
 .sw-trigger {
-  position: fixed; bottom: 24px; left: 24px; z-index: 60;
+  position: fixed; bottom: 80px; left: 16px; z-index: 60;
   display: flex; align-items: center; gap: 8px;
   padding: 10px 20px; border-radius: 30px;
   background: linear-gradient(135deg, #FDEEF1, #D6E9DC);
@@ -357,6 +357,9 @@ if (!localStorage.getItem('exaucee_spun')) {
   cursor: pointer;
   box-shadow: 0 6px 22px rgba(196,130,138,0.18), 0 2px 6px rgba(0,0,0,0.04);
   transition: transform 0.22s, box-shadow 0.22s;
+}
+@media (min-width: 768px) {
+  .sw-trigger { bottom: 24px; left: 24px; }
 }
 .sw-trigger:hover {
   transform: translateY(-3px);

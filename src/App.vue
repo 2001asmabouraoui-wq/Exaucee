@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, computed } from 'vue'
+import { onMounted, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useProductStore } from './pinia/productStore'
 import { useAuthStore }    from './pinia/authStore'
@@ -23,6 +23,10 @@ onMounted(() => {
 })
 
 const isAdmin = computed(() => route.path.startsWith(`/${ADMIN_PATH}`))
+
+watch(() => cartStore.showCart, (open) => {
+  document.body.style.overflow = open ? 'hidden' : ''
+})
 </script>
 
 <template>
@@ -37,7 +41,7 @@ const isAdmin = computed(() => route.path.startsWith(`/${ADMIN_PATH}`))
       href="https://wa.me/21694000000"
       target="_blank"
       rel="noopener noreferrer"
-      class="wa-float fixed bottom-6 right-6 z-50 flex h-10 w-10 items-center justify-center rounded-full text-white shadow-lg transition-transform duration-200 hover:scale-110"
+      class="wa-float fixed bottom-20 right-4 md:bottom-6 md:right-6 z-50 flex h-10 w-10 items-center justify-center rounded-full text-white shadow-lg transition-transform duration-200 hover:scale-110"
       style="background-color:#25D366;"
       title="Chat with us"
     >

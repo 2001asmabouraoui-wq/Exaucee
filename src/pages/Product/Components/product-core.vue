@@ -169,7 +169,8 @@ async function submitReview() {
       reviewImagePreview.value = ''
       reviewImageUrl.value     = ''
     } else {
-      reviewError.value = langStore.t.product.reviewError
+      const body = await res.json().catch(() => ({}))
+      reviewError.value = (body as any).error || langStore.t.product.reviewError
     }
   } catch {
     reviewError.value = langStore.t.product.reviewError

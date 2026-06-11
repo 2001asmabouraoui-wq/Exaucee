@@ -255,6 +255,17 @@ function hideHamburger() { hamburgerState.value = 'hide' }
               : { background:'transparent', opacity:'0.45' }"
           >{{ flag }}</button>
         </div>
+        <!-- Mobile sign-in / account -->
+        <button
+          v-if="!auth.isLoggedIn"
+          @click="hideHamburger(); showAuth = true"
+          class="uppercase font-bold text-xs tracking-widest transition hover:opacity-60 text-left"
+          style="color:#C4828A;"
+        >{{ langStore.t.nav.signIn }}</button>
+        <template v-else>
+          <router-link to="/account" @click="hideHamburger()" class="uppercase hover:opacity-60 transition" style="color:#C4828A;">{{ langStore.t.nav.myAccount }}</router-link>
+          <button @click="auth.signOut(); hideHamburger()" class="uppercase text-xs font-bold tracking-widest hover:opacity-60 transition text-left" style="color:#C4828A;">{{ langStore.t.nav.signOut }}</button>
+        </template>
       </nav>
     </transition>
   </header>

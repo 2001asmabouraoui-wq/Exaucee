@@ -45,11 +45,29 @@ router.post('/', async (req, res) => {
     return
   }
 
-  const { data, error } = await supabase
-    .from('orders')
-    .insert([{ name, email, phone, address, zip, city, country, payment_method, comment, items, subtotal, shipping, total, status: 'pending', coupon_code: coupon_code || null, discount: discount || 0 }])
-    .select()
-    .single()
+  // Try inserting with optional columns; retry stripping any that don't exist yet
+  async function tryInsertOrder(row: Record<string, unknown>): Promise<{ data: any; error: any }> {
+    const result = await supabase.from('orders').insert([row]).select().single()
+    if (!result.error) return result
+    const msg = (result.error.message ?? '').toLowerCase()
+    const col = msg.match(/column "([^"]+)"/)
+      || msg.match(/'([^']+)' column/)
+      || msg.match(/column '([^']+)'/)
+    if (col && (msg.includes('does not exist') || msg.includes('schema cache'))) {
+      const retry = { ...row }
+      delete retry[col[1]]
+      return tryInsertOrder(retry)
+    }
+    return result
+  }
+
+  const { data, error } = await tryInsertOrder({
+    name, email, phone, address, zip, city, country,
+    payment_method, comment, items, subtotal, shipping, total,
+    status: 'pending',
+    coupon_code: coupon_code || null,
+    discount: discount || 0,
+  })
 
   if (error) {
     console.error('Supabase insert error:', error)
