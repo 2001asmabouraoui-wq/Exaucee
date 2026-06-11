@@ -21,16 +21,17 @@ import perksRouter    from './routes/perks.js'
 
 const app = express()
 
-const allowedOrigins = [
-  process.env.FRONTEND_URL,
-  'http://localhost:5173',
-  'http://localhost:5174',
-  'http://localhost:5175',
-].filter(Boolean) as string[]
+function isAllowedOrigin(origin: string | undefined): boolean {
+  if (!origin) return true
+  if (origin.startsWith('http://localhost:')) return true
+  if (origin.endsWith('.vercel.app')) return true
+  if (process.env.FRONTEND_URL && origin === process.env.FRONTEND_URL) return true
+  return false
+}
 
 app.use(cors({
   origin: (origin, cb) => {
-    if (!origin || allowedOrigins.includes(origin)) return cb(null, true)
+    if (isAllowedOrigin(origin)) return cb(null, true)
     cb(new Error('Not allowed by CORS'))
   },
   methods: ['GET', 'POST', 'PATCH', 'DELETE'],
