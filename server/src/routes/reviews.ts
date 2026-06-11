@@ -47,7 +47,7 @@ router.post('/', async (req, res) => {
 
   const { error } = await supabase
     .from('reviews')
-    .insert([{ product_id, name, email, rating: ratingNum, comment, approved: false, image_url: image_url || null }])
+    .insert([{ product_id, name, email, rating: ratingNum, comment, approved: true, image_url: image_url || null }])
 
   if (error) { res.status(500).json({ error: 'Failed to submit review' }); return }
   res.status(201).json({ success: true, message: 'Review submitted for approval.' })
