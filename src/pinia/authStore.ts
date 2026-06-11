@@ -130,6 +130,14 @@ export const useAuthStore = defineStore('auth', () => {
     return { success: true, url: data.url }
   }
 
+  async function signInWithOAuth(provider: 'google' | 'facebook') {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider,
+      options: { redirectTo: `${window.location.origin}/` },
+    })
+    if (error) throw new Error(error.message)
+  }
+
   async function resetPassword(email: string) {
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
       redirectTo: `${window.location.origin}/account`,
@@ -142,6 +150,6 @@ export const useAuthStore = defineStore('auth', () => {
     isLoggedIn, isAdmin, displayName, avatarUrl, accessToken,
     authHeaders,
     initialize, signIn, signUp, signOut, resetPassword,
-    updateProfile, uploadAvatar,
+    updateProfile, uploadAvatar, signInWithOAuth,
   }
 })
